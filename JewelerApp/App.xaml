@@ -1,0 +1,11 @@
+﻿<Application x:Class="JewelerApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:JewelerApp"
+             xmlns:converter="clr-namespace:JewelerApp.Classes"
+             StartupUri="Windows/OpenWindow.xaml">
+    <Application.Resources>
+        <converter:BoolToIntConverter x:Key="BoolToIntConverter"></converter:BoolToIntConverter>
+        
+    </Application.Resources>
+</Application>

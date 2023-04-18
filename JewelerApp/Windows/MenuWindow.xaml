@@ -1,0 +1,60 @@
+﻿<Window x:Class="JewelerApp.Windows.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JewelerApp.Windows"
+        mc:Ignorable="d"
+        Title="Главное меню" 
+        Height="900" 
+        Width="1440"
+        FontFamily="Comic Sans MC"
+        FontSize="16">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Background="#FF76E383"/>
+        <StackPanel HorizontalAlignment="Left"
+                    Orientation="Horizontal"
+                    Margin="10">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="TextAlignment" Value="Left"/>
+                    <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Name="RoleTextBlock" Width="150"/>
+            <TextBlock Name="NameTextBlock"/>
+            <TextBlock Name="SurnameTextBlock"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" 
+                    Orientation="Horizontal"
+                    Name="NavigationStackPanel">
+            <Button Content="Товары"
+                    Name="ProductButton"
+                    Click="ProductButton_Click"/>
+            <Button Content="Пользователи"
+                    Name="UserButton"
+                    Click="UserButton_Click"/>
+            <Button Content="Заказы"
+                    Name="OrderButton"
+                    Click="OrderButton_Click"/>
+        </StackPanel>
+        <Frame Name="MenuFrame"
+               Grid.Row="1"
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
